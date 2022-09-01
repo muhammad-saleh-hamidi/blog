@@ -1,0 +1,39 @@
+{% extends '_base.html' %}
+
+{% block page_title %}
+    post blog
+{% endblock %}
+
+{% block content %}
+    <div class="container mt-4">
+        <div class="row">
+            <div class="col-9">
+                {% for post in list_post %}
+                    <div class="card shadow my-3 p-5 ">
+
+                        <h1>{{ post.title }}</h1>
+                        <p class="small text-muted mt-2">By: {{ post.auther }}</p>
+                        <p class="mt-2">{{ post.text }}</p>
+                        <a class="btn btn-sm btn-success" href="/blog/{{ post.id }}">Raed more</a>
+                    </div>
+                {% endfor %}
+
+
+            </div>
+            <div class="col-3">
+                <div class="card my-4">
+                    <h5 class="card-header">About</h5>
+                    <div class="card-body">
+                        <p class="card-text">We love python and django. So we created a blog site to share our
+                            thoughts</p>
+                        <a href="#"
+                           class="btn btn-sm btn-danger">
+                            More...
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
