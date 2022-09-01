@@ -25,3 +25,6 @@ def post_detail_view(request, pk):
     #     print('Excepted')
 
     return render(request, 'blog/post_detail.html', {'post': post})
+
+def test(request):
+    pass
